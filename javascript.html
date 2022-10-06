@@ -8,7 +8,9 @@
 <body>
     <button>시작/종료</button>
     <br><br>
-    <audio controls>녹음된 소리를 재생할 audio 엘리먼트</audio>
+    <audio controls>녹음된 소리를 재생할 audio 엘리먼트
+        <source src="C:/Users/admin/STUDY/03_MAINPROJECT/test/sample_audio_mp3.mp3" type="audio/mpeg">
+    </audio>
 
 </body>
 <script>
@@ -44,7 +46,7 @@
             mediaRecorder.onstop = (event)=>{
                 
                 // 녹음이 종료되면, 배열에 담긴 오디오 데이터(Blob)들을 합친다: 코덱도 설정해준다.
-                const blob = new Blob(audioArray, {"type": "audio/ogg codecs=opus"});
+                const blob = new Blob(audioArray, {"type": "audio/mpeg codecs=opus"});
                 audioArray.splice(0); // 기존 오디오 데이터들은 모두 비워 초기화한다.
                 
                 // Blob 데이터에 접근할 수 있는 주소를 생성한다.
